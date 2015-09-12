@@ -2,7 +2,8 @@ import math
 
 
 def sieve(n):
-    a = [simple(x) for x in range(1, n + 1)]
+    a = [simple(x) for x in range(2, n + 1)]
+    a.insert(0, False)
     return a
 
 
