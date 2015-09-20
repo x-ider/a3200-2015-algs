@@ -1,7 +1,7 @@
 from sys import stdin
 
 value = int(stdin.readline())
-coins = [int(i) for i in str(stdin.readline()).split()]
+coins = [int(i) for i in stdin.readline().split()]
 amount = len(coins)
 coins.sort(reverse=True)
 
