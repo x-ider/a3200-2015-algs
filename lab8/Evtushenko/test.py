@@ -1,6 +1,6 @@
 import unittest
 
-from queue_on_2_stacks as queue
+import queue_on_2_stacks as queue
 
 
 class TestQueue(unittest.TestCase):
