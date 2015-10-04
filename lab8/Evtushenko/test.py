@@ -38,3 +38,5 @@ class TestQueue(unittest.TestCase):
         q = queue.StacksQueueWithMaxElement()
         inp = ['pop', 'push', 5, 'push', 4, 'max', 'pop', 'push', 3, 'max', 'size', 'pop', 'max', 'pop', 'size', 'max']
         exp = ['empty', 'ok', 'ok', 5, 5, 'ok', 4, 2, 4, 3, 3, 0, 'empty']
+        res = self.interpreter(q, inp)
+        self.assertEqual(res, exp)
