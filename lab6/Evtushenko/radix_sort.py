@@ -40,8 +40,8 @@ def counting_sort(a, n):
         c[b[i]] -= 1
     return d
 
-
-# a = [int(i) for i in stdin.readline().split()]
-# a = radix_sort(a)
-# for i in a:
-#     stdout.write(str(i) + ' ')
+if __name__ == '__main__':
+    a = [int(i) for i in stdin.readline().split()]
+    a = radix_sort(a)
+    for i in a:
+        stdout.write(str(i) + ' ')
