@@ -14,6 +14,8 @@ def calculate(m, n):
             if j > 0:
                 add_to_m = current_row[j - 1] + 1
             add_to_n = previous_row[j] + 1
+            if m[j] == n[i] != n[i-1]:
+                add_to_n -= 1
             if j > 0 and i > 0:
                 if m[j] == n[i]:
                     add_to_mn = previous_row[j - 1]
