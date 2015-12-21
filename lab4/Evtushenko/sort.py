@@ -30,9 +30,9 @@ def merge(a, p, q, r):
 
 
 def insertion_sort(a, p, r):
-    for i in range(p, r + 1):
+    for i in range(p + 1, r + 1):
         j = i
-        while j > 0 and a[j] < a[j - 1]:
+        while j > p and a[j] < a[j - 1]:
             a[j], a[j - 1] = a[j - 1], a[j]
             j -= 1
 
