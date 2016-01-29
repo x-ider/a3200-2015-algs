@@ -36,11 +36,11 @@ def insertion_sort(a, p, r):
             a[j], a[j - 1] = a[j - 1], a[j]
             j -= 1
 
-
-a = [int(i) for i in stdin.readline().split()]
-merge_sort(a, 0, len(a) - 1, 9)
-for i in a:
-    print(i, end=' ')
+if __name__ == '__main__':
+    a = [int(i) for i in stdin.readline().split()]
+    merge_sort(a, 0, len(a) - 1, 9)
+    for i in a:
+        print(i, end=' ')
 
 """
 # k = 9 according to code below:

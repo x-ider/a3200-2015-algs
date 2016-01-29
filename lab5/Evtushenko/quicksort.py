@@ -1,28 +1,33 @@
 from sys import stdin, stdout
-import time
+import random
 
 
 def quick_sort(a, l, r):
     if l < r:
-        q = partition(a, l, r)
-        quick_sort(a, l, q - 1)
-        quick_sort(a, q + 1, r)
+        t = partition(a, l, r)
+        left_border, right_border = t
+        quick_sort(a, l, left_border)
+        quick_sort(a, right_border, r)
 
 
 def partition(a, l, r):
-    x = a[r]
-    i = l - 1
-    for j in range(l, r):
-        if a[j] < x:
-            i += 1
+    pivot_id = random.randint(l, r)
+    a[l], a[pivot_id] = a[pivot_id], a[l]
+    j = l
+    for i in range(l + 1, r + 1):
+        if a[i] <= a[l]:
+            j += 1
             a[i], a[j] = a[j], a[i]
-    a[i + 1], a[r] = a[r], a[i + 1]
-    return i + 1
+    a[l], a[j] = a[j], a[l]
+    k = j
+    for i in range(l, k - 1):
+        if a[i] == a[j]:
+            k -= 1
+            a[i], a[k] = a[k], a[i]
+    return k - 1, j + 1
 
-
-a = [int(i) for i in stdin.readline().split()]
-begin_time = time.time()
-quick_sort(a, 0, len(a) - 1)
-stdout.write(str(time.time() - begin_time) +'\n')
-for i in a:
-    stdout.write(str(i) + ' ')
+if __name__ == '__main__':
+    a = [int(i) for i in stdin.readline().split()]
+    quick_sort(a, 0, len(a) - 1)
+    for i in a:
+        stdout.write(str(i) + ' ')
