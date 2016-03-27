@@ -19,3 +19,9 @@ class TestSorting(unittest.TestCase):
         res = radix_sort.radix_sort(arr)
         exp = [0, 6, 43, 54, 87, 100, 123, 134, 220, 555, 555, 555, 562, 776, 777, 777, 777, 54536565, 4547585756456]
         self.assertEqual(exp, res)
+
+    def test_negative(self):
+        arr = [5, -4, -35, -2, 0, 21, -21, 88]
+        res = radix_sort.radix_sort(arr)
+        exp = [-35, -21, -4, -2, 0, 5, 21, 88]
+        self.assertEqual(res, exp)

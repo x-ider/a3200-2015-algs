@@ -16,7 +16,7 @@ def n_digit(x, n):
     return x
 
 
-def radix_sort(a):
+def sort(a):
     if len(a) != 0:
         max = a[0]
         for i in a:
@@ -39,6 +39,25 @@ def counting_sort(a, n):
         d[c[b[i]] - 1] = a[i]
         c[b[i]] -= 1
     return d
+
+
+def radix_sort(a):
+    positive = []
+    negative = []
+    for i in a:
+        if i >= 0:
+            positive.append(i)
+        else:
+            negative.append(i)
+    positive = sort(positive)
+    negative = [-x for x in negative]
+    negative = sort(negative)
+    negative = [-x for x in negative]
+    negative.reverse()
+    for i in positive:
+        negative.append(i)
+    return negative
+
 
 if __name__ == '__main__':
     a = [int(i) for i in stdin.readline().split()]
